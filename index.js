@@ -1,10 +1,12 @@
 const express = require('express')
-const { env } = require('process')
+const path = require('path')
 
 const app = express()
 
+const htmlUrl = __dirname + '/index.html'
+console.log(htmlUrl)
 app.get('*', (req, res) => {
-    res.send('Hellow NODE')
+    res.sendFile(htmlUrl)
 })
 
 const port = process.env.port || 3000
